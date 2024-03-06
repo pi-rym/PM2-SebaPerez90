@@ -1,0 +1,156 @@
+html .header-container .session,
+body .header-container .session, html .header-container .nav-bar .unorderlist-nav,
+body .header-container .nav-bar .unorderlist-nav, html .header-container .header-logo,
+body .header-container .header-logo, html .header-container,
+body .header-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+html .main-section-container .movie-card .data-container,
+body .main-section-container .movie-card .data-container, html .main-section-container .movie-card,
+body .main-section-container .movie-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  margin: 0;
+  background-color: #000000;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+html .header-container,
+body .header-container {
+  justify-content: flex-end;
+  gap: 2em;
+  color: #f5eded;
+  padding: 1em 1em;
+  position: relative;
+}
+html .header-container .header-logo,
+body .header-container .header-logo {
+  position: absolute;
+  left: 2em;
+  bottom: 1.2em;
+}
+html .header-container .header-logo span,
+body .header-container .header-logo span {
+  font-weight: 900;
+  font-size: 1.5em;
+}
+html .header-container .header-logo span::first-letter,
+body .header-container .header-logo span::first-letter {
+  color: #c31432;
+  font-size: 2em;
+}
+html .header-container .header-logo img,
+body .header-container .header-logo img {
+  width: 50px;
+  height: 50px;
+}
+html .header-container .nav-bar .unorderlist-nav,
+body .header-container .nav-bar .unorderlist-nav {
+  gap: 2em;
+}
+html .header-container .nav-bar .unorderlist-nav li,
+body .header-container .nav-bar .unorderlist-nav li {
+  list-style: none;
+}
+html .header-container .nav-bar .unorderlist-nav li a,
+body .header-container .nav-bar .unorderlist-nav li a {
+  font-weight: 700;
+  color: #f5eded;
+  text-decoration: none;
+}
+html .header-container .nav-bar .unorderlist-nav li a:hover,
+body .header-container .nav-bar .unorderlist-nav li a:hover {
+  transition: all 200ms;
+  color: #c31432;
+}
+html .header-container .session,
+body .header-container .session {
+  font-weight: 700;
+  gap: 1em;
+}
+html .header-container .session .fa-solid:hover,
+body .header-container .session .fa-solid:hover {
+  transition: all 200ms;
+  color: #c31432;
+  cursor: pointer;
+}
+html .main-section-container,
+body .main-section-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background: linear-gradient(to top, #c31432, #2c2c2c, #000000);
+  padding: 5em 0;
+}
+html .main-section-container .movie-card,
+body .main-section-container .movie-card {
+  justify-content: flex-start;
+  height: 100%;
+  width: 27em;
+}
+html .main-section-container .movie-card .image-container,
+body .main-section-container .movie-card .image-container {
+  height: 26em;
+}
+html .main-section-container .movie-card .image-container img,
+body .main-section-container .movie-card .image-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0.3em;
+  box-shadow: 13px 11px 18px -3px rgba(0, 0, 0, 0.5);
+}
+html .main-section-container .movie-card .data-container,
+body .main-section-container .movie-card .data-container {
+  color: #fff;
+  width: 65%;
+  height: 8em;
+  position: relative;
+}
+html .main-section-container .movie-card .data-container h1,
+body .main-section-container .movie-card .data-container h1 {
+  font-size: 1.3em;
+  font-weight: 800;
+  text-align: center;
+}
+html .main-section-container .movie-card .data-container .rate,
+body .main-section-container .movie-card .data-container .rate {
+  position: absolute;
+  bottom: 6.1em;
+  left: 0.2em;
+  font-weight: bolder;
+  padding: 0.3em 0.7em 0.3em 0.5em;
+  border-radius: 0.2em;
+  background-color: rgba(0, 0, 0, 0.4039215686);
+  backdrop-filter: blur(2px);
+  font-size: 1.3em;
+}
+html .main-section-container .movie-card .data-container .rate strong,
+body .main-section-container .movie-card .data-container .rate strong {
+  text-shadow: 0 0 2px #fff705;
+}
+html .main-section-container .movie-card .data-container .more-details,
+body .main-section-container .movie-card .data-container .more-details {
+  text-transform: capitalize;
+  display: flex;
+  gap: 1em;
+  background: rgba(0, 0, 0, 0.189);
+  padding: 0.5em;
+}
+html .main-section-container .movie-card .data-container .genre,
+body .main-section-container .movie-card .data-container .genre {
+  font-weight: 700;
+  color: rgba(233, 233, 233, 0.8196078431);
+}
+
+/*# sourceMappingURL=main.css.map */
