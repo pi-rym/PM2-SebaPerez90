@@ -109,11 +109,11 @@ body {
     .movie-card {
       @extend %flex-col;
       justify-content: flex-start;
-      height: 100%;
+      height: 100%; 
       width: 27em;
 
       .image-container {
-        height: 26em;
+        height: 26em; 
 
         img {
           height: 100%;
