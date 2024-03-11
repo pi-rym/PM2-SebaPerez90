@@ -1,28 +1,9 @@
-const main_cont = document.querySelector(".main-section-container");
+const transformDataToElement = require("./renderCards");
+const tempData = require("./tempData");
 
-function transformDataToElement() {
-  tempData.map((item) => {
-    const card_info_container = document.createElement("section");
-    
-    card_info_container.classList.add("movie-card");
-    
-    card_info_container.innerHTML = `
-    <div class=image-container>
-        <img class='poster' src=${item.poster} alt=${item.title} />
-    </div>
-    <div class="data-container">
-        <h1>${item.title}</h1>
-        <span class='rate'><strong>⭐</strong> ${item.rate}</span>
-        <div class='more-details'>
-            <span>director: ${item.director}</span>
-            <span>año: ${item.year}</span>
-        </div>
-        <span class='genre'>${item.genre[0]} | ${item.genre[1]}</span>
-    </div>
-    `;
+console.log(tempData);
 
-    main_cont.appendChild(card_info_container);
-  });
-}
 
-transformDataToElement();
+$.get("https://students-api.2.us-1.fl0.io/movies", (data) => {
+  transformDataToElement(data);
+});
