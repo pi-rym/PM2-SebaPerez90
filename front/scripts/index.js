@@ -2,7 +2,7 @@ const transformDataToElement = require("./renderCards");
 const tempData = require("./tempData");
 const axios = require("axios");
 
-//? IMPORTING DATA MOVIE JSON 
+//? IMPORTING DATA MOVIE JSON
 // console.log(tempData);
 
 //? GET REQUEST USIN CDN TO THE JQUERY
@@ -13,10 +13,15 @@ const axios = require("axios");
 //? GET REQUEST USIN AXIOS LIBRARY
 axios
   .get("https://students-api.up.railway.app/movies")
+
   .then((response) => {
-    const data = response.data;
-    transformDataToElement(data);
+    if (response.status === 200) {
+      const data = response.data;
+
+      transformDataToElement(data);
+    }
   })
+
   .catch((error) => {
     console.error(error);
   });
