@@ -1,4 +1,5 @@
 const { Router } = require("express");
+const dogsController  = require("../controllers/dogsController");
 
 const dogsRouter = Router();
 
@@ -6,8 +7,6 @@ dogsRouter.get("/", (req, res) => {
   res.send("guau guau");
 });
 
-dogsRouter.get("/favorites", (req, res) => {
-  res.send("soy coco tu perro favorito");
-});
+dogsRouter.get("/favorites", dogsController);
 
 module.exports = dogsRouter;

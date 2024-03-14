@@ -5,7 +5,7 @@ const dogsRouter = require('./routes/dogsRoute')
 const app = express();
 
 app.get("/", (req, res) => {
-  res.send("hello world");
+  res.send("home page");
 });
 
 app.use('/birds', router)

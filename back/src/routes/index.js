@@ -1,11 +1,11 @@
-const express = require("express");
-const router = express.Router();
+const {Router} = require("express");
+const indexController = require("../controllers/indexController");
 
+const router = Router();
 
 // define the home page route
-router.get("/", (req, res) => {
-  res.send("Birds home page");
-});
+router.get("/", indexController);
+
 // define the about route
 router.get("/about", (req, res) => {
   res.send("About birds");
