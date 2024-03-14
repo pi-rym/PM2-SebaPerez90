@@ -7,7 +7,7 @@ const moviesController = async (req, res, next) => {
 };
 
 const testService = (req, res, next) => {
-  res.send("implementing my firs controller");
+  res.send("implementing my first controller");
   greeting();
   next();
 };

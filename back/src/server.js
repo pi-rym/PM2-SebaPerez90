@@ -23,10 +23,6 @@ app.use((req, res, next) => {
 });
 
 //ASSIGN THE ROUTES PATH
-// app.get("/", (req, res) => {
-//   res.send("home page");
-// });
-
 app.use("/", moviesRouter);
 
 app.use("/example", exampleRoute);

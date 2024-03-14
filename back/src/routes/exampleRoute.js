@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const dogsController  = require("../controllers/exampleController");
+const exampleController  = require("../controllers/exampleController");
 
 const exampleRoute = Router();
 
@@ -7,6 +7,6 @@ exampleRoute.get("/", (req, res) => {
   res.send("guau guau");
 });
 
-exampleRoute.get("/favorite", dogsController);
+exampleRoute.get("/favorite", exampleController);
 
 module.exports = exampleRoute;
