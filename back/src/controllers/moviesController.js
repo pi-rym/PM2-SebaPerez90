@@ -1,5 +1,15 @@
-const moviesController = (req, res) => {
-  res.send("we are woorking in this route");
+const { getMovies, greeting } = require("../services/moviesService");
+
+const moviesController = async (req, res, next) => {
+  const data = await getMovies();
+  console.log(data);
+  next();
 };
 
-module.exports = moviesController;
+const testService = (req, res, next) => {
+  res.send("implementing my firs controller");
+  greeting();
+  next();
+};
+
+module.exports = { testService, moviesController };
