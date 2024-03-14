@@ -25,6 +25,8 @@ app.use((req, res, next) => {
 //ASSIGN THE ROUTES PATH
 app.use("/", moviesRouter);
 
+
+//!!! THIS IS ONLY A EXAMPLE TO CHECK THE CONECTIONS ARE RIGTH
 app.use("/example", exampleRoute);
 
 module.exports = app;
