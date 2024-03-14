@@ -2,7 +2,7 @@ const { getMovies, greeting } = require("../services/moviesService");
 
 const moviesController = async (req, res, next) => {
   const data = await getMovies();
-  console.log(data);
+  res.json(data)
   next();
 };
 

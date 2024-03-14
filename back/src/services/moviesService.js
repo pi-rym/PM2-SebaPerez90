@@ -16,7 +16,7 @@ const getMovies = async () => {
 };
 
 
-//TEST FUNCTION TO CHECK THE CONECTION
+//TEST FUNCTION TO CHECK THE CONECTION WITH CONTROLLERS
 const greeting = () => {
   console.log("hello world");
 };
