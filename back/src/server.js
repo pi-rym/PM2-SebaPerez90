@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 app.use("/", moviesRouter);
 
 
-//!!! THIS IS ONLY A EXAMPLE TO CHECK THE CONECTIONS ARE RIGTH
+//!!! THIS IS ONLY AA EXAMPLE TO CHECK THE CONECTIONS ARE RIGHT
 app.use("/example", exampleRoute);
 
 module.exports = app;
