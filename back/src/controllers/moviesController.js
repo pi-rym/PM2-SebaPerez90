@@ -1,15 +1,18 @@
-const { getMovies, greeting } = require("../services/moviesService");
+const { getMovies, fetchMovies } = require("../services/moviesService");
 
-const moviesController = async (req, res, next) => {
+const moviesController = async (req, res) => {
   const data = await getMovies();
-  res.json(data)
-  next();
+  res.json(data);
 };
 
-const testService = (req, res, next) => {
-  res.send("implementing my first controller");
-  greeting();
-  next();
+const fetchMoviesController = async (req, res) => {
+  try {
+    const movies = await fetchMovies();
+
+    res.status(200).json(movies);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 };
 
-module.exports = { testService, moviesController };
+module.exports = { moviesController, fetchMoviesController };

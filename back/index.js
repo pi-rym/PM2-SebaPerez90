@@ -4,7 +4,7 @@ const conectionDB = require("./src/config/conectionDB");
 const PORT = 3000;
 
 conectionDB()
-  .then((res) => {
+  .then(() => {
     app.listen(PORT, () => {
       console.log(`server listening on port  ${PORT}`);
     });
@@ -12,4 +12,3 @@ conectionDB()
   .catch((error) => {
     console.log(error);
   });
-

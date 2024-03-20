@@ -1,24 +1,23 @@
+const Movie = require("../models/Movie");
+
 const getMovies = async () => {
   try {
     const resp = await fetch("https://students-api.up.railway.app/movies");
 
     if (resp.status === 200) {
-      console.log("the request to the DB has been successfully");
-
       const data = await resp.json();
 
       return data;
-    } else throw new Error('something with the DB goes wrong')
-    
+    }
   } catch (error) {
-    console.error(error);
+    throw new Error("something with the DB goes wrong");
   }
 };
 
+const fetchMovies = async () => {
+  const movies = await Movie.find();
 
-//TEST FUNCTION TO CHECK THE CONECTION WITH CONTROLLERS
-const greeting = () => {
-  console.log("hello world");
+  return movies;
 };
 
-module.exports = { getMovies, greeting };
+module.exports = { getMovies, fetchMovies };

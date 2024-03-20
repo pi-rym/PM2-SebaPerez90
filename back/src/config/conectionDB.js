@@ -6,7 +6,7 @@ dotenv.config();
 
 const conectionDB = async () => {
   set("strictQuery", true);
-  mongoose
+  await mongoose
     .connect(process.env.MONGODB_URI)
     .then(() => console.log("conected to the data base"))
     .catch((error) => {

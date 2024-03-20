@@ -1,32 +1,21 @@
 const express = require("express");
-
-//MIDDLEWARES
-const morgan = require("morgan");
 const cors = require("cors");
+const morgan = require("morgan");
 
-//ROUTES
-const moviesRouter = require("./routes/moviesRouter");
-const exampleRoute = require("./routes/exampleRoute");
+const route = require("./routes/index");
 
 const app = express();
 
-app.use(morgan("dev"));
-
 app.use(cors());
-
+app.use(morgan("dev"));
 app.use(express.json());
 
-//THIS MIDDLEWARE RUN BEFORE EACH REQUEST
 app.use((req, res, next) => {
-  console.log("I´M A FUCKING MIDDLEWARE 👻");
+  console.log("you past through the middleware 💩");
   next();
 });
 
 //ASSIGN THE ROUTES PATH
-app.use("/", moviesRouter);
-
-
-//!!! THIS IS ONLY AA EXAMPLE TO CHECK THE CONECTIONS ARE RIGHT
-app.use("/example", exampleRoute);
+app.use(route);
 
 module.exports = app;
