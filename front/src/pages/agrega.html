@@ -32,25 +32,36 @@
       </div>
     </header>
     <main class="main-container">
+      <!-- <header>
+        <h1>Cansado de ver siempre lo mismo ? 🤔</h1>
+        <p>
+          Ahora con nuestra app vas a poder disfrutar de nuestro servicio de
+          agregar peliculas para que el entretenimiento no tenga fin.<br />
+          Lo único que tenes que hacer es llenar todos los campos del formulario
+          y listo, facil, rapido y sencillo.
+        </p>
+      </header> -->
+      <span class="error-message">TODOS LOS CAMPOS DEBEN ESTAR COMPLETOS</span>
       <form id="form" class="form-container">
         <div class="wraper">
           <label class="label-item" for="title">
             Titulo
             <input
+              class="input-item"
               id="title"
-              placeholder=" Avengers Infinity War ..."
+              placeholder=" Avengers Infinity War"
               autocomplete="off"
               name="title"
               type="text"
             />
-            <span></span>
           </label>
 
           <label class="label-item" for="director">
             Director
             <input
+              class="input-item"
               id="director"
-              placeholder="James Gun ..."
+              placeholder="James Gun"
               autocomplete="off"
               name="director"
               type="text"
@@ -63,8 +74,9 @@
           <label for="rate">
             Calificación
             <input
+              class="input-item"
               id="rate"
-              placeholder="1 - 10 ..."
+              placeholder="9.9"
               autocomplete="off"
               name="rate"
               type="text"
@@ -75,8 +87,9 @@
           <label class="label-item" for="year">
             Año Lanzamiento
             <input
+              class="input-item"
               id="year"
-              placeholder="marzo 2024 ..."
+              placeholder="2024"
               autocomplete="off"
               name="year"
               type="text"
@@ -86,13 +99,14 @@
         </div>
 
         <div>
-          <label class="url-container" for="url-img">
+          <label class="url-container" for="poster">
             URL Poster
             <input
-              id="url-img"
+              class="input-item"
+              id="poster"
               placeholder="htttps://example.jpg ..."
               autocomplete="off"
-              name="url-img"
+              name="poster"
               type="text"
             />
             <span></span>
@@ -130,7 +144,7 @@
             </label>
           </div>
         </div>
-        <button aria-label="send-btn" id="send-btn">
+        <button class="btn-active" aria-label="send-btn" id="send-btn">
           Agregar Pelicula <strong>🎞️</strong>
         </button>
       </form>

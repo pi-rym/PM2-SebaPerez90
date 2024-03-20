@@ -10,7 +10,8 @@ body .header-container {
 
 html .main-container .form-container > :nth-child(3),
 body .main-container .form-container > :nth-child(3), html .main-container .form-container,
-body .main-container .form-container, html .main-section-container .movie-card .data-container,
+body .main-container .form-container, html .main-container,
+body .main-container, html .main-section-container .movie-card .data-container,
 body .main-section-container .movie-card .data-container, html .main-section-container .movie-card,
 body .main-section-container .movie-card {
   display: flex;
@@ -157,10 +158,62 @@ body .main-section-container .movie-card .data-container .genre {
 html .main-container,
 body .main-container {
   width: 100%;
-  display: flex;
-  align-items: center;
+  gap: 5em;
   padding: 4em 0;
   background: linear-gradient(to top, #c31432, #2c2c2c, #000000);
+}
+html .main-container header,
+body .main-container header {
+  color: #f5eded;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+html .main-container header h1,
+body .main-container header h1 {
+  text-align: center;
+  font-size: 3em;
+}
+html .main-container header p,
+body .main-container header p {
+  border-left: 12px solid #c31432;
+  padding: 1.5em 1em;
+  background-color: rgba(138, 14, 35, 0.2941176471);
+  font-size: 1.1em;
+  width: 70%;
+  margin: 0 auto;
+  font-weight: 600;
+}
+html .main-container .error-message,
+body .main-container .error-message {
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+  scale: 0.8;
+  font-weight: 800;
+  transition: all 400ms;
+}
+html .main-container .showing-error,
+body .main-container .showing-error {
+  transform: translateY(10em);
+  opacity: 1;
+  padding: 2em;
+  scale: 1;
+  background: #c31432;
+  color: #c31432;
+  border-radius: 0.4em;
+  transition: all 400ms;
+  font-size: 1.4em;
+  z-index: 10;
+  font-weight: 800;
+  filter: blur(0px) !important;
+  animation: delay-display 1s linear forwards;
+}
+@keyframes delay-display {
+  to {
+    color: #f5eded;
+    filter: blur(0px) !important;
+  }
 }
 html .main-container .form-container,
 body .main-container .form-container {
@@ -188,6 +241,15 @@ body .main-container .form-container .wraper label {
   display: flex;
   flex-direction: column;
   width: 50%;
+  position: relative;
+}
+html .main-container .form-container .wraper label::after,
+body .main-container .form-container .wraper label::after {
+  content: "*";
+  position: absolute;
+  right: 0.5em;
+  top: 2.5em;
+  color: #f00;
 }
 html .main-container .form-container .wraper label input,
 body .main-container .form-container .wraper label input {
@@ -198,6 +260,15 @@ body .main-container .form-container .wraper label input {
   font-weight: 500;
   color: #2f2f2f;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+html .main-container .form-container .wraper label input:focus,
+body .main-container .form-container .wraper label input:focus {
+  outline: 2px solid #c31432;
+}
+html .main-container .form-container .wraper label input:focus::placeholder,
+body .main-container .form-container .wraper label input:focus::placeholder {
+  opacity: 0;
+  transition: all 300ms;
 }
 html .main-container .form-container .wraper label input::placeholder,
 body .main-container .form-container .wraper label input::placeholder {
@@ -218,6 +289,15 @@ body .main-container .form-container > :nth-child(3) .url-container {
   font-weight: 800;
   font-size: 1em;
   width: 153%;
+  position: relative;
+}
+html .main-container .form-container > :nth-child(3) .url-container::after,
+body .main-container .form-container > :nth-child(3) .url-container::after {
+  content: "*";
+  position: absolute;
+  right: 1em;
+  top: 2.5em;
+  color: #f00;
 }
 html .main-container .form-container > :nth-child(3) .url-container input,
 body .main-container .form-container > :nth-child(3) .url-container input {
@@ -228,6 +308,15 @@ body .main-container .form-container > :nth-child(3) .url-container input {
   font-weight: 500;
   color: #2f2f2f;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+html .main-container .form-container > :nth-child(3) .url-container input:focus,
+body .main-container .form-container > :nth-child(3) .url-container input:focus {
+  outline: 2px solid #c31432;
+}
+html .main-container .form-container > :nth-child(3) .url-container input:focus::placeholder,
+body .main-container .form-container > :nth-child(3) .url-container input:focus::placeholder {
+  opacity: 0;
+  transition: all 300ms;
 }
 html .main-container .form-container > :nth-child(3) .url-container input::placeholder,
 body .main-container .form-container > :nth-child(3) .url-container input::placeholder {
@@ -263,8 +352,8 @@ body .main-container .form-container > :nth-child(3) .genre-container label inpu
   scale: 2;
   margin-bottom: 1em;
 }
-html .main-container .form-container > :last-child,
-body .main-container .form-container > :last-child {
+html .main-container .form-container .btn-active,
+body .main-container .form-container .btn-active {
   padding: 1em;
   width: 70%;
   border-radius: 0.3em;
@@ -276,16 +365,16 @@ body .main-container .form-container > :last-child {
   font-weight: bolder;
   transition: all 200ms;
 }
-html .main-container .form-container > :last-child:hover,
-body .main-container .form-container > :last-child:hover {
+html .main-container .form-container .btn-active:hover,
+body .main-container .form-container .btn-active:hover {
   background: #8a0e22;
   transition: all 200ms;
   border: 1px solid rgba(255, 255, 255, 0.2352941176);
   transform: translateY(-0.2em);
   box-shadow: 0px 22px 8px -12px rgba(0, 0, 0, 0.19);
 }
-html .main-container .form-container > :last-child:active,
-body .main-container .form-container > :last-child:active {
+html .main-container .form-container .btn-active:active,
+body .main-container .form-container .btn-active:active {
   scale: 0.95;
 }
 
