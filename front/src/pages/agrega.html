@@ -32,7 +32,7 @@
       </div>
     </header>
     <main class="main-container">
-      <!-- <header>
+      <header>
         <h1>Cansado de ver siempre lo mismo ? 🤔</h1>
         <p>
           Ahora con nuestra app vas a poder disfrutar de nuestro servicio de
@@ -40,11 +40,12 @@
           Lo único que tenes que hacer es llenar todos los campos del formulario
           y listo, facil, rapido y sencillo.
         </p>
-      </header> -->
+      </header>
       <span class="error-message">TODOS LOS CAMPOS DEBEN ESTAR COMPLETOS</span>
       <form id="form" class="form-container">
+        <span class="successfully-message">PELICULA CREADA EXITOSAMENTE 🚀</span>
         <div class="wraper">
-          <label class="label-item" for="title">
+          <label for="title">
             Titulo
             <input
               class="input-item"
@@ -56,7 +57,7 @@
             />
           </label>
 
-          <label class="label-item" for="director">
+          <label for="director">
             Director
             <input
               class="input-item"
@@ -66,7 +67,6 @@
               name="director"
               type="text"
             />
-            <span></span>
           </label>
         </div>
 
@@ -76,15 +76,15 @@
             <input
               class="input-item"
               id="rate"
-              placeholder="9.9"
+              placeholder="10"
               autocomplete="off"
               name="rate"
-              type="text"
+              type="number"
+              max="10"
             />
-            <span></span>
           </label>
 
-          <label class="label-item" for="year">
+          <label class="year-label" for="year">
             Año Lanzamiento
             <input
               class="input-item"
@@ -93,8 +93,9 @@
               autocomplete="off"
               name="year"
               type="text"
+              maxlength="4"
             />
-            <span></span>
+            <span class="input-error">Debe ser un número de una fecha real</span>
           </label>
         </div>
 
@@ -109,7 +110,6 @@
               name="poster"
               type="text"
             />
-            <span></span>
           </label>
 
           <div class="genre-container">

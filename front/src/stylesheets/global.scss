@@ -238,6 +238,20 @@ body {
       padding: 3em 2em;
       gap: 2em;
       box-shadow: 13px 27px 29px -8px rgba(0, 0, 0, 0.55);
+      position: relative;
+
+      .successfully-message {
+        color: #fff;
+        position: fixed;
+        opacity: 0;
+        font-size: 1.2em;
+        top: 1em;
+        background: #2bbb32;
+        padding: 1.5em;
+        border-radius: 0.4em;
+        font-weight: 700;
+        z-index: 100;
+      }
 
       .wraper {
         display: flex;
@@ -260,6 +274,11 @@ body {
             right: 0.5em;
             top: 2.5em;
             color: #f00;
+          }
+
+          > :first-child,
+          > :nth-child(2) {
+            text-transform: capitalize;
           }
 
           input {
@@ -287,9 +306,24 @@ body {
             }
           }
         }
+
+        .year-label {
+          position: relative;
+
+          .input-error {
+            position: absolute;
+            opacity: 0;
+            bottom: -1.5em;
+            color: #fd3838;
+            text-transform: lowercase;
+            font-size: 0.9em;
+            left: 1em;
+            font-weight: 600;
+          }
+        }
       }
 
-      > :nth-child(3) {
+      > :nth-child(4) {
         @extend %flex-col;
         gap: 4em;
 

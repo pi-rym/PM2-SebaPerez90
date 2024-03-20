@@ -8,12 +8,19 @@ const drama = document.getElementById("drama-checkbox");
 const elements = document.querySelectorAll(".input-item");
 const btn = document.getElementById("send-btn");
 const error_message = document.querySelector(".error-message");
+const input_error = document.querySelector(".input-error");
+const successfully_message = document.querySelector(".successfully-message");
 
 const arr = [action, adventure, comedy, fantasy, sciFi, drama];
 const genre = [];
 const obj = {};
 
-//!DONE
+elements[3].addEventListener("change", (e) => {
+  e.target.value > 2024
+    ? (input_error.style.opacity = "1")
+    : (input_error.style.opacity = "0");
+});
+
 const capturingValues = () => {
   for (let i = 0; i < elements.length; i++) {
     const names = elements[i].name;
@@ -25,7 +32,6 @@ const capturingValues = () => {
   return obj;
 };
 
-//!DONE
 const isChecked = () => {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i].checked) genre.push(arr[i].value);
@@ -34,8 +40,7 @@ const isChecked = () => {
   return genre;
 };
 
-//!DONE
-const checkNotNull = () => {
+const checkInputsValues = () => {
   let count = 0;
 
   for (let i = 0; i < elements.length; i++) {
@@ -53,22 +58,22 @@ const checkNotNull = () => {
       error_message.classList.remove("showing-error");
     }, 3000);
   } else {
+    successfully_message.style.opacity = "1";
     setTimeout(() => {
+      successfully_message.style.opacity = "0";
       form.reset();
-    }, 2000);
+    }, 5000);
   }
 };
 
-//! MAIN EVENT
 const onSubmit = (e) => {
   e.preventDefault();
 
-  
   capturingValues();
 
   isChecked();
 
-  checkNotNull();
+  checkInputsValues();
 };
 
 form.addEventListener("submit", onSubmit);

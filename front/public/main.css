@@ -8,8 +8,8 @@ body .header-container {
   align-items: center;
 }
 
-html .main-container .form-container > :nth-child(3),
-body .main-container .form-container > :nth-child(3), html .main-container .form-container,
+html .main-container .form-container > :nth-child(4),
+body .main-container .form-container > :nth-child(4), html .main-container .form-container,
 body .main-container .form-container, html .main-container,
 body .main-container, html .main-section-container .movie-card .data-container,
 body .main-section-container .movie-card .data-container, html .main-section-container .movie-card,
@@ -225,6 +225,20 @@ body .main-container .form-container {
   padding: 3em 2em;
   gap: 2em;
   box-shadow: 13px 27px 29px -8px rgba(0, 0, 0, 0.55);
+  position: relative;
+}
+html .main-container .form-container .successfully-message,
+body .main-container .form-container .successfully-message {
+  color: #fff;
+  position: fixed;
+  opacity: 0;
+  font-size: 1.2em;
+  top: 1em;
+  background: #2bbb32;
+  padding: 1.5em;
+  border-radius: 0.4em;
+  font-weight: 700;
+  z-index: 100;
 }
 html .main-container .form-container .wraper,
 body .main-container .form-container .wraper {
@@ -251,6 +265,12 @@ body .main-container .form-container .wraper label::after {
   top: 2.5em;
   color: #f00;
 }
+html .main-container .form-container .wraper label > :first-child,
+html .main-container .form-container .wraper label > :nth-child(2),
+body .main-container .form-container .wraper label > :first-child,
+body .main-container .form-container .wraper label > :nth-child(2) {
+  text-transform: capitalize;
+}
 html .main-container .form-container .wraper label input,
 body .main-container .form-container .wraper label input {
   margin-top: 0.3em;
@@ -275,12 +295,27 @@ body .main-container .form-container .wraper label input::placeholder {
   font-weight: 500;
   opacity: 0.9;
 }
-html .main-container .form-container > :nth-child(3),
-body .main-container .form-container > :nth-child(3) {
+html .main-container .form-container .wraper .year-label,
+body .main-container .form-container .wraper .year-label {
+  position: relative;
+}
+html .main-container .form-container .wraper .year-label .input-error,
+body .main-container .form-container .wraper .year-label .input-error {
+  position: absolute;
+  opacity: 0;
+  bottom: -1.5em;
+  color: #fd3838;
+  text-transform: lowercase;
+  font-size: 0.9em;
+  left: 1em;
+  font-weight: 600;
+}
+html .main-container .form-container > :nth-child(4),
+body .main-container .form-container > :nth-child(4) {
   gap: 4em;
 }
-html .main-container .form-container > :nth-child(3) .url-container,
-body .main-container .form-container > :nth-child(3) .url-container {
+html .main-container .form-container > :nth-child(4) .url-container,
+body .main-container .form-container > :nth-child(4) .url-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -291,16 +326,16 @@ body .main-container .form-container > :nth-child(3) .url-container {
   width: 153%;
   position: relative;
 }
-html .main-container .form-container > :nth-child(3) .url-container::after,
-body .main-container .form-container > :nth-child(3) .url-container::after {
+html .main-container .form-container > :nth-child(4) .url-container::after,
+body .main-container .form-container > :nth-child(4) .url-container::after {
   content: "*";
   position: absolute;
   right: 1em;
   top: 2.5em;
   color: #f00;
 }
-html .main-container .form-container > :nth-child(3) .url-container input,
-body .main-container .form-container > :nth-child(3) .url-container input {
+html .main-container .form-container > :nth-child(4) .url-container input,
+body .main-container .form-container > :nth-child(4) .url-container input {
   margin-top: 0.3em;
   padding: 1em;
   border-radius: 0.3em;
@@ -309,23 +344,23 @@ body .main-container .form-container > :nth-child(3) .url-container input {
   color: #2f2f2f;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
-html .main-container .form-container > :nth-child(3) .url-container input:focus,
-body .main-container .form-container > :nth-child(3) .url-container input:focus {
+html .main-container .form-container > :nth-child(4) .url-container input:focus,
+body .main-container .form-container > :nth-child(4) .url-container input:focus {
   outline: 2px solid #c31432;
 }
-html .main-container .form-container > :nth-child(3) .url-container input:focus::placeholder,
-body .main-container .form-container > :nth-child(3) .url-container input:focus::placeholder {
+html .main-container .form-container > :nth-child(4) .url-container input:focus::placeholder,
+body .main-container .form-container > :nth-child(4) .url-container input:focus::placeholder {
   opacity: 0;
   transition: all 300ms;
 }
-html .main-container .form-container > :nth-child(3) .url-container input::placeholder,
-body .main-container .form-container > :nth-child(3) .url-container input::placeholder {
+html .main-container .form-container > :nth-child(4) .url-container input::placeholder,
+body .main-container .form-container > :nth-child(4) .url-container input::placeholder {
   font-weight: 500;
   opacity: 0.9;
   text-align: center;
 }
-html .main-container .form-container > :nth-child(3) .genre-container,
-body .main-container .form-container > :nth-child(3) .genre-container {
+html .main-container .form-container > :nth-child(4) .genre-container,
+body .main-container .form-container > :nth-child(4) .genre-container {
   color: #f5eded;
   display: flex;
   justify-content: center;
@@ -333,22 +368,22 @@ body .main-container .form-container > :nth-child(3) .genre-container {
   position: relative;
   margin-top: 2em;
 }
-html .main-container .form-container > :nth-child(3) .genre-container span,
-body .main-container .form-container > :nth-child(3) .genre-container span {
+html .main-container .form-container > :nth-child(4) .genre-container span,
+body .main-container .form-container > :nth-child(4) .genre-container span {
   position: absolute;
   top: -3em;
   color: #f5eded;
   font-weight: 800;
   font-size: 1em;
 }
-html .main-container .form-container > :nth-child(3) .genre-container label,
-body .main-container .form-container > :nth-child(3) .genre-container label {
+html .main-container .form-container > :nth-child(4) .genre-container label,
+body .main-container .form-container > :nth-child(4) .genre-container label {
   display: flex;
   flex-direction: column-reverse;
   font-size: 0.8em;
 }
-html .main-container .form-container > :nth-child(3) .genre-container label input,
-body .main-container .form-container > :nth-child(3) .genre-container label input {
+html .main-container .form-container > :nth-child(4) .genre-container label input,
+body .main-container .form-container > :nth-child(4) .genre-container label input {
   scale: 2;
   margin-bottom: 1em;
 }
