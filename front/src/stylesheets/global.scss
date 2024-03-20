@@ -89,7 +89,6 @@ body {
       gap: 1em;
 
       .fa-solid {
-        
         &:hover {
           transition: all 200ms;
           color: $secondary;
@@ -109,11 +108,11 @@ body {
     .movie-card {
       @extend %flex-col;
       justify-content: flex-start;
-      height: 100%; 
+      height: 100%;
       width: 27em;
 
       .image-container {
-        height: 26em; 
+        height: 26em;
 
         img {
           height: 100%;
@@ -162,6 +161,109 @@ body {
         .genre {
           font-weight: 700;
           color: #e9e9e9d1;
+        }
+      }
+    }
+  }
+
+  //FORM SECTION "AGREGA PELICULA"
+  .main-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+
+    .form-container {
+      background: $tertiary;
+      width: 40em;
+      height: 30em;
+      border-radius: 0.4em;
+      margin: 0 auto;
+      @extend %flex-col;
+      padding:1.5em;
+
+      .wraper {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        gap: 1em;
+
+        label {
+          color: $light;
+          font-weight: 800;
+          font-size: 1.3em;
+          display: flex;
+          flex-direction: column;
+          width: 50%;
+
+          input {
+            margin-top: 0.3em;
+            padding: 1em;
+            font-size: 0.85em;
+            border-radius: 0.3em;
+            outline: none;
+            font-weight: 500;
+            color: #2f2f2f;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont,
+              "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+              "Helvetica Neue", sans-serif;
+
+            &::placeholder {
+              font-weight: 500;
+              opacity: 0.9;
+            }
+          }
+        }
+      }
+
+      > :last-child {
+        @extend %flex-col;
+        gap: 5em;
+
+        .url-container {
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          color: $light;
+          font-weight: 800;
+          font-size: 1.3em;
+          width: 100%;
+
+          input {
+            width: 100%;
+            margin-top: 0.3em;
+            padding: 1em;
+            font-size: 0.85em;
+            border-radius: 0.3em;
+            outline: none;
+            font-weight: 500;
+            color: #2f2f2f;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont,
+              "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+              "Helvetica Neue", sans-serif;
+
+            &::placeholder {
+              font-weight: 500;
+              opacity: 0.9;
+              text-align: center;
+            }
+          }
+        }
+
+        .genre-container {
+          color: $light;
+          position: relative;
+          width: 140%;
+          display: flex;
+          justify-content: space-around;
+          label {
+            font-weight: 800;
+            position: absolute;
+            top: -2em;
+            width: 100%;
+            text-align: center;
+            font-size: 1.5em;
+          }
         }
       }
     }
