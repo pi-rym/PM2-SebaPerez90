@@ -12,7 +12,11 @@ const axios = require("axios");
 
 //? GET REQUEST USIN AXIOS LIBRARY
 axios
-  .get("https://students-api.up.railway.app/movies")
+  //!URL PROVIDE FOR HENRY APP
+  // .get("https://students-api.up.railway.app/movies")
+
+  //!TESTING OUR BACKEND APP CONECTION
+  .get("http://localhost:3000/movies")
 
   .then((response) => {
     if (response.status === 200) {
