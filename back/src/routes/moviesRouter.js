@@ -3,6 +3,7 @@ const {
   moviesController,
   fetchMoviesController,
 } = require("../controllers/moviesController");
+
 const moviesRouter = Router();
 
 moviesRouter.get("/", moviesController);

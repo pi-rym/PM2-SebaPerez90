@@ -15,7 +15,6 @@ app.use((req, res, next) => {
   next();
 });
 
-//ASSIGN THE ROUTES PATH
 app.use(route);
 
 module.exports = app;
