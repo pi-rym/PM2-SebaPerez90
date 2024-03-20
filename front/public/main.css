@@ -8,8 +8,8 @@ body .header-container {
   align-items: center;
 }
 
-html .main-container .form-container > :last-child,
-body .main-container .form-container > :last-child, html .main-container .form-container,
+html .main-container .form-container > :nth-child(3),
+body .main-container .form-container > :nth-child(3), html .main-container .form-container,
 body .main-container .form-container, html .main-section-container .movie-card .data-container,
 body .main-section-container .movie-card .data-container, html .main-section-container .movie-card,
 body .main-section-container .movie-card {
@@ -157,18 +157,21 @@ body .main-section-container .movie-card .data-container .genre {
 html .main-container,
 body .main-container {
   width: 100%;
-  height: 100vh;
   display: flex;
   align-items: center;
+  padding: 4em 0;
+  background: linear-gradient(to top, #c31432, #2c2c2c, #000000);
 }
 html .main-container .form-container,
 body .main-container .form-container {
   background: #2c2c2c;
   width: 40em;
-  height: 30em;
-  border-radius: 0.4em;
+  height: auto;
+  border-radius: 0.5em;
   margin: 0 auto;
-  padding: 1.5em;
+  padding: 3em 2em;
+  gap: 2em;
+  box-shadow: 13px 27px 29px -8px rgba(0, 0, 0, 0.55);
 }
 html .main-container .form-container .wraper,
 body .main-container .form-container .wraper {
@@ -181,7 +184,7 @@ html .main-container .form-container .wraper label,
 body .main-container .form-container .wraper label {
   color: #f5eded;
   font-weight: 800;
-  font-size: 1.3em;
+  font-size: 1em;
   display: flex;
   flex-direction: column;
   width: 50%;
@@ -190,7 +193,6 @@ html .main-container .form-container .wraper label input,
 body .main-container .form-container .wraper label input {
   margin-top: 0.3em;
   padding: 1em;
-  font-size: 0.85em;
   border-radius: 0.3em;
   outline: none;
   font-weight: 500;
@@ -202,54 +204,89 @@ body .main-container .form-container .wraper label input::placeholder {
   font-weight: 500;
   opacity: 0.9;
 }
-html .main-container .form-container > :last-child,
-body .main-container .form-container > :last-child {
-  gap: 5em;
+html .main-container .form-container > :nth-child(3),
+body .main-container .form-container > :nth-child(3) {
+  gap: 4em;
 }
-html .main-container .form-container > :last-child .url-container,
-body .main-container .form-container > :last-child .url-container {
+html .main-container .form-container > :nth-child(3) .url-container,
+body .main-container .form-container > :nth-child(3) .url-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   text-align: center;
   color: #f5eded;
   font-weight: 800;
-  font-size: 1.3em;
-  width: 100%;
+  font-size: 1em;
+  width: 153%;
 }
-html .main-container .form-container > :last-child .url-container input,
-body .main-container .form-container > :last-child .url-container input {
-  width: 100%;
+html .main-container .form-container > :nth-child(3) .url-container input,
+body .main-container .form-container > :nth-child(3) .url-container input {
   margin-top: 0.3em;
   padding: 1em;
-  font-size: 0.85em;
   border-radius: 0.3em;
   outline: none;
   font-weight: 500;
   color: #2f2f2f;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
-html .main-container .form-container > :last-child .url-container input::placeholder,
-body .main-container .form-container > :last-child .url-container input::placeholder {
+html .main-container .form-container > :nth-child(3) .url-container input::placeholder,
+body .main-container .form-container > :nth-child(3) .url-container input::placeholder {
   font-weight: 500;
   opacity: 0.9;
   text-align: center;
 }
-html .main-container .form-container > :last-child .genre-container,
-body .main-container .form-container > :last-child .genre-container {
+html .main-container .form-container > :nth-child(3) .genre-container,
+body .main-container .form-container > :nth-child(3) .genre-container {
   color: #f5eded;
-  position: relative;
-  width: 140%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 2em;
+  position: relative;
+  margin-top: 2em;
 }
-html .main-container .form-container > :last-child .genre-container label,
-body .main-container .form-container > :last-child .genre-container label {
-  font-weight: 800;
+html .main-container .form-container > :nth-child(3) .genre-container span,
+body .main-container .form-container > :nth-child(3) .genre-container span {
   position: absolute;
-  top: -2em;
-  width: 100%;
-  text-align: center;
-  font-size: 1.5em;
+  top: -3em;
+  color: #f5eded;
+  font-weight: 800;
+  font-size: 1em;
+}
+html .main-container .form-container > :nth-child(3) .genre-container label,
+body .main-container .form-container > :nth-child(3) .genre-container label {
+  display: flex;
+  flex-direction: column-reverse;
+  font-size: 0.8em;
+}
+html .main-container .form-container > :nth-child(3) .genre-container label input,
+body .main-container .form-container > :nth-child(3) .genre-container label input {
+  scale: 2;
+  margin-bottom: 1em;
+}
+html .main-container .form-container > :last-child,
+body .main-container .form-container > :last-child {
+  padding: 1em;
+  width: 70%;
+  border-radius: 0.3em;
+  cursor: pointer;
+  background: #c31432;
+  outline: none;
+  border: 1px solid #c31432;
+  color: #f5eded;
+  font-weight: bolder;
+  transition: all 200ms;
+}
+html .main-container .form-container > :last-child:hover,
+body .main-container .form-container > :last-child:hover {
+  background: #8a0e22;
+  transition: all 200ms;
+  border: 1px solid rgba(255, 255, 255, 0.2352941176);
+  transform: translateY(-0.2em);
+  box-shadow: 0px 22px 8px -12px rgba(0, 0, 0, 0.19);
+}
+html .main-container .form-container > :last-child:active,
+body .main-container .form-container > :last-child:active {
+  scale: 0.95;
 }
 
 /*# sourceMappingURL=main.css.map */

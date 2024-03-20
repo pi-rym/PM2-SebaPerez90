@@ -169,18 +169,21 @@ body {
   //FORM SECTION "AGREGA PELICULA"
   .main-container {
     width: 100%;
-    height: 100vh;
     display: flex;
     align-items: center;
+    padding: 4em 0;
+    background: linear-gradient(to top, $secondary, $tertiary, $primary);
 
     .form-container {
       background: $tertiary;
       width: 40em;
-      height: 30em;
-      border-radius: 0.4em;
+      height: auto;
+      border-radius: 0.5em;
       margin: 0 auto;
       @extend %flex-col;
-      padding:1.5em;
+      padding: 3em 2em;
+      gap: 2em;
+      box-shadow: 13px 27px 29px -8px rgba(0, 0, 0, 0.55);
 
       .wraper {
         display: flex;
@@ -191,7 +194,7 @@ body {
         label {
           color: $light;
           font-weight: 800;
-          font-size: 1.3em;
+          font-size: 1em;
           display: flex;
           flex-direction: column;
           width: 50%;
@@ -199,7 +202,6 @@ body {
           input {
             margin-top: 0.3em;
             padding: 1em;
-            font-size: 0.85em;
             border-radius: 0.3em;
             outline: none;
             font-weight: 500;
@@ -216,24 +218,23 @@ body {
         }
       }
 
-      > :last-child {
+      > :nth-child(3) {
         @extend %flex-col;
-        gap: 5em;
+        gap: 4em;
 
         .url-container {
           display: flex;
           flex-direction: column;
+          justify-content: center;
           text-align: center;
           color: $light;
           font-weight: 800;
-          font-size: 1.3em;
-          width: 100%;
+          font-size: 1em;
+          width: 153%;
 
           input {
-            width: 100%;
             margin-top: 0.3em;
             padding: 1em;
-            font-size: 0.85em;
             border-radius: 0.3em;
             outline: none;
             font-weight: 500;
@@ -252,18 +253,55 @@ body {
 
         .genre-container {
           color: $light;
-          position: relative;
-          width: 140%;
           display: flex;
-          justify-content: space-around;
-          label {
-            font-weight: 800;
+          justify-content: center;
+          gap: 2em;
+          position: relative;
+          margin-top: 2em;
+
+          span {
             position: absolute;
-            top: -2em;
-            width: 100%;
-            text-align: center;
-            font-size: 1.5em;
+            top: -3em;
+            color: $light;
+            font-weight: 800;
+            font-size: 1em;
           }
+
+          label {
+            display: flex;
+            flex-direction: column-reverse;
+            font-size: 0.8em;
+
+            input {
+              scale: 2;
+              margin-bottom: 1em;
+            }
+          }
+        }
+      }
+
+      > :last-child {
+        padding: 1em;
+        width: 70%;
+        border-radius: 0.3em;
+        cursor: pointer;
+        background: $secondary;
+        outline: none;
+        border: 1px solid $secondary;
+        color: $light;
+        font-weight: bolder;
+        transition: all 200ms;
+
+        &:hover {
+          background: #8a0e22;
+          transition: all 200ms;
+          border: 1px solid #ffffff3c;
+          transform: translateY(-0.2em);
+          box-shadow: 0px 22px 8px -12px rgba(0,0,0,0.19);
+
+        }
+        &:active {
+          scale: 0.95;
         }
       }
     }

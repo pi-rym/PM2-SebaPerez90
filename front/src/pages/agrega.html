@@ -34,27 +34,25 @@
     <main class="main-container">
       <form id="form" class="form-container">
         <div class="wraper">
-          <label class="label-item" for="">
+          <label class="label-item" for="title">
             Titulo
             <input
-              class=""
-              id=""
+              id="title"
               placeholder=" Avengers Infinity War ..."
               autocomplete="off"
-              name=""
+              name="title"
               type="text"
             />
             <span></span>
           </label>
 
-          <label class="label-item" for="">
+          <label class="label-item" for="director">
             Director
             <input
-              class=""
-              id=""
+              id="director"
               placeholder="James Gun ..."
               autocomplete="off"
-              name=""
+              name="director"
               type="text"
             />
             <span></span>
@@ -62,27 +60,25 @@
         </div>
 
         <div class="wraper">
-          <label for="">
+          <label for="rate">
             Calificación
             <input
-              class=""
-              id=""
+              id="rate"
               placeholder="1 - 10 ..."
               autocomplete="off"
-              name=""
+              name="rate"
               type="text"
             />
             <span></span>
           </label>
 
-          <label class="label-item" for="">
+          <label class="label-item" for="year">
             Año Lanzamiento
             <input
-              class=""
-              id=""
+              id="year"
               placeholder="marzo 2024 ..."
               autocomplete="off"
-              name=""
+              name="year"
               type="text"
             />
             <span></span>
@@ -90,35 +86,59 @@
         </div>
 
         <div>
-          <label class="url-container" for="">
+          <label class="url-container" for="url-img">
             URL Poster
             <input
-              class=""
-              id=""
+              id="url-img"
               placeholder="htttps://example.jpg ..."
               autocomplete="off"
-              name=""
+              name="url-img"
               type="text"
             />
             <span></span>
           </label>
-  
+
           <div class="genre-container">
-            <label class="" for=""> Genero </label>
-            <input class="" id="" value="" type="checkbox" />Acción
-            <input class="" id="" value="" type="checkbox" />Aventura
-            <input class="" id="" value="" type="checkbox" />Comedia
-            <input class="" id="" value="" type="checkbox" />Fantasia
-            <input class="" id="" value="" type="checkbox" />Ficción
-            <input class="" id="" value="" type="checkbox" />Drama
+            <span>Generos</span>
+            <label class="checkbox-item" for="action-checkbox">
+              Acción
+              <input id="action-checkbox" value="action" type="checkbox" />
+            </label>
+            <label class="checkbox-item" for="adventure-checkbox">
+              Aventura
+              <input
+                id="adventure-checkbox"
+                value="adventure"
+                type="checkbox"
+              />
+            </label>
+            <label class="checkbox-item" for="comedy-checkbox">
+              Comedia
+              <input id="comedy-checkbox" value="comedy" type="checkbox" />
+            </label>
+            <label class="checkbox-item" for="fantasy-checkbox">
+              Fantasia
+              <input id="fantasy-checkbox" value="fantasy" type="checkbox" />
+            </label>
+            <label class="checkbox-item" for="sciFi-checkbox">
+              Ficción
+              <input id="sciFi-checkbox" value="sci-fi" type="checkbox" />
+            </label>
+            <label class="checkbox-item" for="drama-checkbox">
+              Drama
+              <input id="drama-checkbox" value="drama" type="checkbox" />
+            </label>
           </div>
         </div>
-        
+        <button aria-label="send-btn" id="send-btn">
+          Agregar Pelicula <strong>🎞️</strong>
+        </button>
       </form>
     </main>
     <script
       src="https://kit.fontawesome.com/e3f06d0b4a.js"
       crossorigin="anonymous"
     ></script>
+    <script src="../../scripts/form.js"></script>
   </body>
 </html>
