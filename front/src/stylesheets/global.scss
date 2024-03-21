@@ -43,6 +43,7 @@ body {
     color: $light;
     padding: 1em 1em;
     position: relative;
+    background: linear-gradient(to left, $secondary, $tertiary, $primary);
 
     .header-logo {
       @extend %flex-row;
@@ -98,18 +99,20 @@ body {
     }
   }
 
+  //HOME PAGE MOVIES CONTAINER
   .main-section-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap;
-    background: linear-gradient(to top, $secondary, $tertiary, $primary);
+    background: linear-gradient(to left, $secondary, $tertiary, $primary);
     padding: 5em 0;
 
     .movie-card {
       @extend %flex-col;
       justify-content: flex-start;
-      height: 100%;
-      width: 27em;
+      height: auto;
+      width: 16em;
+      margin-top: 5em;
 
       .image-container {
         height: 26em;
@@ -124,10 +127,12 @@ body {
       }
       .data-container {
         @extend %flex-col;
+        justify-content: flex-start;
         color: #fff;
-        width: 65%;
-        height: 8em;
+        width: 100%;
+        height: 10em;
         position: relative;
+        text-transform: capitalize;
 
         h1 {
           font-size: 1.3em;
@@ -137,8 +142,8 @@ body {
 
         .rate {
           position: absolute;
-          bottom: 6.1em;
-          left: 0.2em;
+          bottom: 8em;
+          left: 0.5em;
           font-weight: bolder;
           padding: 0.3em 0.7em 0.3em 0.5em;
           border-radius: 0.2em;

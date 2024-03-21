@@ -13,7 +13,7 @@ const successfully_message = document.querySelector(".successfully-message");
 
 const arr = [action, adventure, comedy, fantasy, sciFi, drama];
 const genre = [];
-const obj = {};
+let movieData = {};
 
 elements[3].addEventListener("change", (e) => {
   e.target.value > 2024
@@ -26,18 +26,18 @@ const capturingValues = () => {
     const names = elements[i].name;
     const values = elements[i].value;
 
-    obj[names] = values;
+    movieData[names] = values;
   }
-  console.log(obj);
-  return obj;
+  return movieData;
 };
 
 const isChecked = () => {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i].checked) genre.push(arr[i].value);
   }
+  movieData = { ...movieData, genre }
 
-  return console.log({ ...obj, genre });
+  return movieData;
 };
 
 const checkInputsValues = () => {
@@ -67,7 +67,7 @@ const checkInputsValues = () => {
 };
 
 
-const createMovie = async (obj) => {
+const createMovie = async (movieData) => {
 
     const requestOptions = {
         method: 'POST',
@@ -75,13 +75,14 @@ const createMovie = async (obj) => {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(obj),
+        body: JSON.stringify(movieData),
     };
 
     try {
         const response = await fetch("http://localhost:3000/movies/", requestOptions);
         const data = await response.json();
         console.log('Respuesta exitosa:', data);
+
     } catch (error) {
         console.error('Error al realizar la solicitud POST:', error);
     }
@@ -96,7 +97,7 @@ const onSubmit = (e) => {
 
   checkInputsValues();
 
-  createMovie();
+  createMovie(movieData);
 };
 
 form.addEventListener("submit", onSubmit);

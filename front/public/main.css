@@ -35,6 +35,7 @@ body .header-container {
   color: #f5eded;
   padding: 1em 1em;
   position: relative;
+  background: linear-gradient(to left, #c31432, #2c2c2c, #000000);
 }
 html .header-container .header-logo,
 body .header-container .header-logo {
@@ -90,16 +91,17 @@ body .header-container .session .fa-solid:hover {
 html .main-section-container,
 body .main-section-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-wrap: wrap;
-  background: linear-gradient(to top, #c31432, #2c2c2c, #000000);
+  background: linear-gradient(to left, #c31432, #2c2c2c, #000000);
   padding: 5em 0;
 }
 html .main-section-container .movie-card,
 body .main-section-container .movie-card {
   justify-content: flex-start;
-  height: 100%;
-  width: 27em;
+  height: auto;
+  width: 16em;
+  margin-top: 5em;
 }
 html .main-section-container .movie-card .image-container,
 body .main-section-container .movie-card .image-container {
@@ -115,10 +117,12 @@ body .main-section-container .movie-card .image-container img {
 }
 html .main-section-container .movie-card .data-container,
 body .main-section-container .movie-card .data-container {
+  justify-content: flex-start;
   color: #fff;
-  width: 65%;
-  height: 8em;
+  width: 100%;
+  height: 10em;
   position: relative;
+  text-transform: capitalize;
 }
 html .main-section-container .movie-card .data-container h1,
 body .main-section-container .movie-card .data-container h1 {
@@ -129,8 +133,8 @@ body .main-section-container .movie-card .data-container h1 {
 html .main-section-container .movie-card .data-container .rate,
 body .main-section-container .movie-card .data-container .rate {
   position: absolute;
-  bottom: 6.1em;
-  left: 0.2em;
+  bottom: 8em;
+  left: 0.5em;
   font-weight: bolder;
   padding: 0.3em 0.7em 0.3em 0.5em;
   border-radius: 0.2em;
