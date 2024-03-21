@@ -20,4 +20,9 @@ const fetchMovies = async () => {
   return movies;
 };
 
-module.exports = { getMovies, fetchMovies };
+const postMovieService = async (product) => {
+  const newProduct = await Movie.create(product);
+  return newProduct;
+};
+
+module.exports = { getMovies, fetchMovies, postMovieService };
