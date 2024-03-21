@@ -10,10 +10,6 @@ app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json());
 
-app.use((req, res, next) => {
-  console.log("you past through the middleware 💩");
-  next();
-});
 
 app.use(route);
 
