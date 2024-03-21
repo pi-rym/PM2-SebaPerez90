@@ -164,7 +164,7 @@ body .main-container {
   width: 100%;
   gap: 5em;
   padding: 4em 0;
-  background: linear-gradient(to top, #c31432, #2c2c2c, #000000);
+  background: linear-gradient(to left, #c31432, #2c2c2c, #000000);
 }
 html .main-container header,
 body .main-container header {
@@ -182,11 +182,12 @@ html .main-container header p,
 body .main-container header p {
   border-left: 12px solid #c31432;
   padding: 1.5em 1em;
-  background-color: rgba(138, 14, 35, 0.2941176471);
+  background-color: rgba(135, 135, 135, 0.2941176471);
   font-size: 1.1em;
   width: 70%;
   margin: 0 auto;
   font-weight: 600;
+  border-radius: 0 0.3em 0.3em 0;
 }
 html .main-container .error-message,
 body .main-container .error-message {

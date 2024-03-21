@@ -177,7 +177,7 @@ body {
     @extend %flex-col;
     gap: 5em;
     padding: 4em 0;
-    background: linear-gradient(to top, $secondary, $tertiary, $primary);
+    background: linear-gradient(to left, $secondary, $tertiary, $primary);
 
     header {
       color: $light;
@@ -193,11 +193,12 @@ body {
       p {
         border-left: 12px solid $secondary;
         padding: 1.5em 1em;
-        background-color: #8a0e234b;
+        background-color: #8787874b;
         font-size: 1.1em;
         width: 70%;
         margin: 0 auto;
         font-weight: 600;
+        border-radius: 0 0.3em 0.3em 0;
       }
     }
 
