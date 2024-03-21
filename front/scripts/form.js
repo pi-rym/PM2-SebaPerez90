@@ -7,9 +7,11 @@ const sciFi = document.getElementById("sciFi-checkbox");
 const drama = document.getElementById("drama-checkbox");
 const elements = document.querySelectorAll(".input-item");
 const btn = document.getElementById("send-btn");
+const btn_clear = document.getElementById("clear-btn");
 const error_message = document.querySelector(".error-message");
 const input_error = document.querySelector(".input-error");
 const successfully_message = document.querySelector(".successfully-message");
+const clear_message = document.querySelector(".successfully-message");
 
 const arr = [action, adventure, comedy, fantasy, sciFi, drama];
 const genre = [];
@@ -35,7 +37,7 @@ const isChecked = () => {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i].checked) genre.push(arr[i].value);
   }
-  movieData = { ...movieData, genre }
+  movieData = { ...movieData, genre };
 
   return movieData;
 };
@@ -66,26 +68,26 @@ const checkInputsValues = () => {
   }
 };
 
-
 const createMovie = async (movieData) => {
+  const requestOptions = {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(movieData),
+  };
 
-    const requestOptions = {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(movieData),
-    };
-
-    try {
-        const response = await fetch("http://localhost:3000/movies/", requestOptions);
-        const data = await response.json();
-        console.log('Respuesta exitosa:', data);
-
-    } catch (error) {
-        console.error('Error al realizar la solicitud POST:', error);
-    }
+  try {
+    const response = await fetch(
+      "http://localhost:3000/movies/",
+      requestOptions
+    );
+    const data = await response.json();
+    console.log("Respuesta exitosa:", data);
+  } catch (error) {
+    console.error("Error al realizar la solicitud POST:", error);
+  }
 };
 
 const onSubmit = (e) => {
@@ -101,3 +103,18 @@ const onSubmit = (e) => {
 };
 
 form.addEventListener("submit", onSubmit);
+
+const clearAllInputs = () => {
+  form.reset();
+  elements.forEach((item) => {
+    item.style.backgroundColor = "#f00";
+    item.style.transition = "1s";
+
+    setTimeout(() => {
+      item.style.backgroundColor = "#fff";
+      item.style.transition = "1s";
+    }, 800);
+  });
+};
+
+btn_clear.addEventListener("click", clearAllInputs);

@@ -2,7 +2,7 @@ const main_cont = document.querySelector(".main-section-container");
 
 function transformDataToElement(dataFetched) {
   dataFetched.map((item) => {
-    const card_info_container = document.createElement("div");
+    const card_info_container = document.createElement("section");
 
     card_info_container.classList.add("movie-card");
 
