@@ -16,7 +16,7 @@ axios
   // .get("https://students-api.up.railway.app/movies")
 
   //!TESTING OUR BACKEND APP CONECTION
-  .get("http://localhost:3000/movies")
+  .get("http://localhost:3000/movies/")
 
   .then((response) => {
     if (response.status === 200) {

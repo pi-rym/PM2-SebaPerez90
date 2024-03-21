@@ -36,8 +36,8 @@ const isChecked = () => {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i].checked) genre.push(arr[i].value);
   }
-  console.log(genre);
-  return genre;
+
+  return console.log({ ...obj, genre });
 };
 
 const checkInputsValues = () => {
@@ -66,6 +66,27 @@ const checkInputsValues = () => {
   }
 };
 
+
+const createMovie = async (obj) => {
+
+    const requestOptions = {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(obj),
+    };
+
+    try {
+        const response = await fetch("http://localhost:3000/movies/", requestOptions);
+        const data = await response.json();
+        console.log('Respuesta exitosa:', data);
+    } catch (error) {
+        console.error('Error al realizar la solicitud POST:', error);
+    }
+};
+
 const onSubmit = (e) => {
   e.preventDefault();
 
@@ -74,6 +95,8 @@ const onSubmit = (e) => {
   isChecked();
 
   checkInputsValues();
+
+  createMovie();
 };
 
 form.addEventListener("submit", onSubmit);
